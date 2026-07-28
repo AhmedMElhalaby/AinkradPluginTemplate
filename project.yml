@@ -13,7 +13,7 @@ settings:
 packages:
   AinkradAppKit:
     url: https://github.com/AhmedMElhalaby/AinkradAppKit
-    revision: dd96b2daf1cd528cf4c8b77cccffbed3fb066fb3
+    revision: d5d994bdd8e79d530410a1c370657fa593fa4ce6
 targets:
   TemplatePlugin:
     type: bundle
@@ -32,6 +32,19 @@ targets:
         INFOPLIST_FILE: Sources/Plugin/Info.plist
         MACH_O_TYPE: mh_bundle
         LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
+    postBuildScripts:
+      # Generate AinkradAPIVersion from the linked SDK rather than
+      # trusting the hand-typed value in Info.plist — see the script.
+      - script: "\"$SRCROOT/scripts/stamp-api-version.sh\""
+        name: Stamp AinkradAPIVersion
+        # The plist is an INPUT, not an output: declaring it makes the build
+        # system order this phase after the task that copies it into the
+        # bundle. Without it the script races that copy and finds nothing.
+        inputFiles:
+          - $(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)
+        # No outputs, so keep it running every build: the linked SDK revision
+        # can change generation without any source file changing.
+        basedOnDependencyAnalysis: false
 schemes:
   TemplatePlugin:
     build: { targets: { TemplatePlugin: all } }
