@@ -12,7 +12,7 @@
     <key>AinkradAppID</key><string>myplugin</string>
     <key>AinkradDisplayName</key><string>My Plugin</string>
     <key>AinkradIconSymbol</key><string>puzzlepiece.extension</string>
-    <key>AinkradAPIVersion</key><integer>7</integer>
+    <key>AinkradAPIVersion</key><integer>8</integer>
     <key>AinkradAuthor</key><string>Your Name</string>
     <key>description</key><string>A short description of what this app does.</string>
 </dict>
