@@ -12,8 +12,16 @@ settings:
     CODE_SIGNING_ALLOWED: NO
 packages:
   AinkradAppKit:
-    url: https://github.com/AhmedMElhalaby/AinkradAppKit
-    revision: d5d994bdd8e79d530410a1c370657fa593fa4ce6
+    # TEMPORARY LOCAL OVERRIDE — settings UX overhaul (feat/settings-catalog).
+    # The settingsCatalog(host:) example below needs SettingsPage/SettingsPath,
+    # which land in AinkradAppKit on this branch. The pinned revision predates
+    # them, so the template cannot build against it.
+    # BEFORE MERGE: AinkradAppKit merges to its development first, then this
+    # block reverts to `url:` + `revision:` pinned at that merge commit. The
+    # host's project.yml carries the same override and the same obligation.
+    path: /Users/ahmedmelhalaby/Home/Projects/Ainkrad/AinkradAppKit
+    # url: https://github.com/AhmedMElhalaby/AinkradAppKit
+    # revision: d5d994bdd8e79d530410a1c370657fa593fa4ce6
 targets:
   TemplatePlugin:
     type: bundle
