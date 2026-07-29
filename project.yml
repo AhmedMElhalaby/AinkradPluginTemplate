@@ -13,7 +13,12 @@ settings:
 packages:
   AinkradAppKit:
     url: https://github.com/AhmedMElhalaby/AinkradAppKit
-    revision: d5d994bdd8e79d530410a1c370657fa593fa4ce6
+    # Must stay AT OR BEHIND the host's pin — the host embeds the one dynamic
+    # copy of the SDK, so a plugin built against a NEWER revision links symbols
+    # that copy does not define and dies at `Bundle.load()`. This matches the
+    # host's pin exactly: the settings-catalog merge, which is what
+    # `settingsCatalog(host:)` in Sources/Plugin/PluginApp.swift needs.
+    revision: 3900640a83ce16b64e9496646344e9e5f5f5863a
 targets:
   TemplatePlugin:
     type: bundle
