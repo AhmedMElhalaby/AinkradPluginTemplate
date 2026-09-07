@@ -1,6 +1,6 @@
 # AinkradPluginTemplate
 
-A starter for an [Ainkrad](https://github.com/AhmedMElhalaby) Marketplace plugin. A plugin is an
+A starter for an [Ainkrad](https://github.com/AinkradHQ) Marketplace plugin. A plugin is an
 `AinkradApp` — a small SwiftUI-based app — compiled into a macOS bundle (`mh_bundle`,
 `.bundle`) that the Ainkrad host loads at runtime and hands a `HostServices` object to. Your
 app never links against the host binary; it only sees the surface `AinkradAppKit` exposes
@@ -186,4 +186,4 @@ Talk to the host only through `HostServices` (`host.theme`, `host.documents`, `h
 
 For a full, real-world example of a plugin with a runtime dependency (SwiftTerm), the
 static-library split, and a working release pipeline, see
-[AinkradTerminal](https://github.com/AhmedMElhalaby/AinkradTerminal).
+[AinkradRune](https://github.com/AinkradHQ/AinkradRune).

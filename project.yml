@@ -12,7 +12,7 @@ settings:
     CODE_SIGNING_ALLOWED: NO
 packages:
   AinkradAppKit:
-    url: https://github.com/AhmedMElhalaby/AinkradAppKit
+    url: https://github.com/AinkradHQ/AinkradAppKit
     # Must stay AT OR BEHIND the host's pin — the host embeds the one dynamic
     # copy of the SDK, so a plugin built against a NEWER revision links symbols
     # that copy does not define and dies at `Bundle.load()`. This matches the
