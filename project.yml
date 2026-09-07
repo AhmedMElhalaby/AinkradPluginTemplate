@@ -18,7 +18,7 @@ packages:
     # that copy does not define and dies at `Bundle.load()`. This matches the
     # host's pin exactly: the settings-catalog merge, which is what
     # `settingsCatalog(host:)` in Sources/Plugin/PluginApp.swift needs.
-    revision: 6cd1599a602e0a7d20f5d9d87b08c547417f3a4e
+    revision: 91ed630a24dc187f8988c104d16a640d3ee7562c
 targets:
   TemplatePlugin:
     type: bundle
